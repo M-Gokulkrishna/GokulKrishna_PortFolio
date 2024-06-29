@@ -3,7 +3,7 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 require('dotenv').config();
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT;
 // Creating Transport and Set up Service  
 const msgTransporter = nodemailer.createTransport({
     service: process.env.NODEMAILER_SERVICE,
@@ -12,18 +12,23 @@ const msgTransporter = nodemailer.createTransport({
         pass: process.env.LOGIN_PASSWORD
     }
 });
+// 
+const corsOptions = {
+    origin: process.env.FRONTEND_URL_CLIENT,
+    optionsSuccessStatus: 200,
+    methods: 'GET,POST',
+    allowedHeaders: ['Content-Type', 'Authorization']
+};
 // Using Middleware
-app.use(cors({
-    origin: process.env.FRONTEND_URL_CLIENT
-}));
+app.use(cors(corsOptions));
 app.use(express.json());
 // Testing Api uri Route
-app.get('/', (request, response)=>{
-    response.status(200).json({Message: "Welcome to Portfolio Home Route!"});
+app.get('/', (request, response) => {
+    response.status(200).json({ Message: "Welcome to Portfolio Home Route!" });
 });
 // Sending Email Api uri Route
 app.post('/send-email', (req, res) => {
-    const { VisitorName, VisitorEmail, VisitorMessage}  = req.body;
+    const { VisitorName, VisitorEmail, VisitorMessage } = req.body;
     const mailConfigurations = {
         from: VisitorEmail,
         to: process.env.RECEPIENT_EMAIL,
