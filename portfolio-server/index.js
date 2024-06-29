@@ -13,7 +13,9 @@ const msgTransporter = nodemailer.createTransport({
     }
 });
 // Using Middleware
-app.use(cors());
+app.use(cors({
+    origin: process.env.FRONTEND_URL_CLIENT
+}));
 app.use(express.json());
 // Testing Api uri Route
 app.get('/', (request, response)=>{
