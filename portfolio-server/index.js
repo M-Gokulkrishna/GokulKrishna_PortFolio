@@ -12,15 +12,8 @@ const msgTransporter = nodemailer.createTransport({
         pass: process.env.LOGIN_PASSWORD
     }
 });
-// 
-const corsOptions = {
-    origin: process.env.FRONTEND_URL_CLIENT,
-    optionsSuccessStatus: 200,
-    methods: 'GET,POST',
-    allowedHeaders: ['Content-Type', 'Authorization']
-};
 // Using Middleware
-app.use(cors(corsOptions));
+app.use(cors());
 app.use(express.json());
 // Testing Api uri Route
 app.get('/', (request, response) => {
