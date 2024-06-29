@@ -1,9 +1,10 @@
 import AOS from 'aos';
-import React, { useEffect } from 'react';
 import '../Stylesheets/HomePage.css';
+import React, { useEffect } from 'react';
 import Header from '../Components/Header.jsx';
 import ProfilePic from '../assets/Profile_pic.png';
-import { FaLinkedin, FaGithub, FaEnvelope } from 'react-icons/fa'
+import ResumePdf from '../assets/files/Resume_15.pdf';
+import { FaLinkedin, FaGithub, FaEnvelope } from 'react-icons/fa';
 
 const HomeSection = () => {
   useEffect(() => {
@@ -23,7 +24,7 @@ const HomeSection = () => {
           <footer className='Home-Icons-Btn'>
             <span>
               <h6 className='m-auto fw-bold'>Resume</h6>
-              <a href="" download={'Gokul_Krishna_M_Resume'}></a>
+              <a href={ResumePdf} download={'Resume_GokulKrishnaM'}></a>
             </span>
             <div>
               <FaLinkedin />

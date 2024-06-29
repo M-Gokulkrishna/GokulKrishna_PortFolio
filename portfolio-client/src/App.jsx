@@ -16,23 +16,28 @@ function App() {
       duration: 900
     });
     window.addEventListener('scroll', () => {
-      setScrollValues(ScrollValueRef.current.getBoundingClientRect().top*(-1));
+      setScrollValues(ScrollValueRef.current.getBoundingClientRect().top * (-1));
     });
   }, [])
-  // useEffect(()=>{
-  //   window.addEventListener('contextmenu', (event)=>{
-  //     event.preventDefault();
-  //   })
-  // }, [])
+  useEffect(()=>{
+    window.addEventListener('contextmenu', (event)=>{
+      event.preventDefault();
+    })
+  }, [])
   return (
     <div className='App-Layout-Page' ref={ScrollValueRef}>
-      <div className='Scroll-to-Top-Icon' data-aos='zoom-in' style={(ScrollValues >= (window.innerHeight / 1.5))?{visibility: 'visible', animation: 'Scroll-to-top-Btn-Animation 0.8s linear infinite' }:{animation: 'none' }}>
+      <div
+        data-aos='zoom-in'
+        className='Scroll-to-Top-Icon'
+        style={(ScrollValues >= (window.innerHeight / 1.5)) ?
+          { visibility: 'visible', animation: 'Scroll-to-top-Btn-Animation 0.8s linear infinite' } :
+          { animation: 'none' }}>
         <FaArrowCircleUp />
         <a href="#Home-Page"></a>
       </div>
       <HomeSection />
       <AboutSection />
-      <SkillsSection ScrollValues={ScrollValues}/>
+      <SkillsSection ScrollValues={ScrollValues} />
       <ProjectSection />
       <ContactSection />
     </div>

@@ -1,8 +1,8 @@
 import AOS from 'aos';
 import axios from 'axios';
 import '../Stylesheets/ContactPage.css';
-import React, { useEffect, useRef, useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
+import React, { useEffect, useRef, useState } from 'react';
 import ContactContainerBg from '../assets/ContactSectionBg.png';
 import { FaLinkedin, FaGithub, FaEnvelope, FaInstagram } from 'react-icons/fa';
 

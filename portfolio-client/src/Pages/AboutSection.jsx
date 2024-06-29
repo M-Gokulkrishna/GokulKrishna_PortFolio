@@ -1,6 +1,6 @@
+import AOS from 'aos';
 import '../Stylesheets/AboutPage.css';
 import React, { useEffect, useState } from 'react';
-import AOS from 'aos';
 
 const AboutSection = () => {
     const [LableClick, setLabelClick] = useState(false);

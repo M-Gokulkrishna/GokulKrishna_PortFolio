@@ -1,6 +1,6 @@
 import AOS from 'aos';
 import '../Stylesheets/SkillsPage.css';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect } from 'react';
 
 const SkillsSection = ({ScrollValues}) => {
     useEffect(() => {
