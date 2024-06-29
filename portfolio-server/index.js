@@ -28,8 +28,7 @@ app.post('/send-email', (req, res) => {
         subject: `Email Sent From ${VisitorName}`,
         text: `Portfolio Message\n
                From: ${VisitorEmail},\n
-               To: ${process.env.RECEPIENT_EMAIL}\n
-               Message: \n\n\t ${VisitorMessage}`
+               To: ${process.env.RECEPIENT_EMAIL}\nMessage: \n\n\t ${VisitorMessage}`
     }
     msgTransporter.sendMail(mailConfigurations, (error, _) => {
         if (error) {
