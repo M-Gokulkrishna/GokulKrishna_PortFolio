@@ -1,0 +1,240 @@
+#Projects-Page {
+    position: relative;
+    display: flex;
+    min-width: 100vw;
+    min-height: 100vh;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+    background: radial-gradient(circle at 16% 83%, rgba(148, 148, 148, 0.06) 0%, rgba(148, 148, 148, 0.06) 50%, rgba(63, 63, 63, 0.06) 50%, rgba(63, 63, 63, 0.06) 100%), radial-gradient(circle at 68% 87%, rgba(66, 66, 66, 0.06) 0%, rgba(66, 66, 66, 0.06) 50%, rgba(105, 105, 105, 0.11) 50%, rgba(105, 105, 105, 0.11) 100%), radial-gradient(circle at 38% 50%, rgba(123, 123, 123, 0.06) 0%, rgba(123, 123, 123, 0.06) 50%, rgba(172, 172, 172, 0.12) 50%, rgba(172, 172, 172, 0.12) 100%), linear-gradient(90deg, hsl(18, 0%, 1%), hsl(18, 0%, 1%));
+}
+
+#Projects-Page>header {
+    display: grid;
+    width: 35vw;
+    height: 60px;
+    margin: 20px;
+    place-items: center;
+    border-radius: 12px;
+    color: var(--Color3);
+    background-color: var(--Color1);
+    box-shadow: 0 0 20px var(--Color1);
+}
+
+#Projects-Page>header::after {
+    position: absolute;
+    content: "";
+    left: 0;
+    width: 8px;
+    height: 100%;
+    border-radius: 20px 0 0 20px;
+    background-color: var(--Color3);/
+}
+
+#Projects-Page>header::before {
+    position: absolute;
+    content: "";
+    right: 0;
+    width: 8px;
+    height: 100%;
+    border-radius: 0 20px 20px 0;
+    background-color: var(--Color3);
+}
+
+.GitHub-Btn{
+    position: relative;
+    width: 110px;
+    height: 34px;
+    font-weight: bold;
+    border-radius: 10px;
+    box-shadow: 0 0 10px;
+    border: 2px solid var(--Color3);
+    background-color: var(--Color2);
+    box-shadow: 0 0 20px var(--Color2);
+}
+
+.GitHub-Btn>a {
+    position: absolute;
+    display: grid;
+    width: 100%;
+    height: 100%;
+    place-items: center;
+    border-radius: 10px;
+    color: var(--Color3);
+    text-decoration: none;
+}
+
+.Carousel-Card {
+    display: flex;
+    width: 80vw;
+    border-radius: 20px;
+    height: calc(100vh - 180px);
+    box-shadow: 0 0 10px var(--Color1);
+}
+
+.Carousel-Card>aside {
+    position: relative;
+    display: flex;
+    width: 45%;
+    height: 100%;
+    padding: 0 28px;
+    align-items: center;
+    border-radius: 20px;
+    color: var(--Color3);
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgba(240, 248, 255, 0.86);
+}
+
+.Description-Header {
+    display: flex;
+    width: 100%;
+    height: 38%;
+    align-items: center;
+    justify-content: end;
+    flex-direction: column;
+}
+
+.Description-Header>a {
+    padding: 2px 6px;
+    font-weight: bold;
+    border-radius: 6px;
+    color: var(--Color1);
+    box-shadow: 0 0 10px;
+    text-decoration: none;
+    background-color: var(--Color3);
+}
+
+.Carousel-Card>aside>p {
+    margin: auto;
+    width: 90%;
+    font-size: 1em;
+    min-height: 58%;
+    overflow-y: auto;
+    text-align: justify;
+    padding: 20px 20px 10px 20px;
+}
+
+.Carousel-Card>aside>p::-webkit-scrollbar {
+    display: none;
+}
+
+.ArrowIcon-L,
+.ArrowIcon-R {
+    position: absolute;
+    display: flex;
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+.ArrowIcon-L {
+    left: 0;
+}
+
+.ArrowIcon-R {
+    right: 0;
+}
+
+.Carousel-Container {
+    position: relative;
+    display: flex;
+    width: 65%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.Carousel-Main-Container {
+    display: grid;
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+    place-items: center;
+}
+
+.Carousel-Slider {
+    display: flex;
+    width: 940px;
+    column-gap: 20px;
+    border-radius: 10px;
+    transition: all 1.6s;
+}
+
+.Carousel-Container::before {
+    position: absolute;
+    content: "";
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, #000000d2, transparent);
+}
+
+.Carousel-Slider>img {
+    border-radius: 10px;
+    transition: all 1.6s;
+}
+
+@media (height<=400px) {
+    #Projects-Page {
+        min-width: 100vw;
+        min-height: 200vh;
+    }
+
+    .Carousel-Card {
+        width: 90vw;
+        height: calc(200vh - 250px);
+    }
+}
+
+@media (width<=800px) {
+    #Projects-Page>header {
+        width: 50vw;
+    }
+
+    .Carousel-Card {
+        width: 90vw;
+        flex-direction: column-reverse;
+    }
+
+    .Carousel-Card>aside {
+        width: 100%;
+        height: 50%;
+        flex-direction: column;
+    }
+
+    .Carousel-Card>aside>p {
+        width: auto;
+        display: flex;
+        padding: 0 8px;
+        font-size: 0.85em;
+        place-items: center;
+    }
+
+    .Carousel-Container {
+        width: 100%;
+        height: 50%;
+    }
+
+    .Carousel-Main-Container {
+        width: 200px;
+        height: 180px;
+    }
+
+    .Carousel-Slider {
+        width: 640px;
+        column-gap: 20px;
+    }
+}
+
+@media (height>=1000px) and (width>=800px) {
+    #Projects-Page {
+        min-width: 100vw;
+        min-height: 50vh;
+    }
+
+    .Carousel-Card {
+        height: calc(50vh - 500px);
+    }
+}

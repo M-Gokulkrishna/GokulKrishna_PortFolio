@@ -1,0 +1,117 @@
+#Skills-Page {
+    position: relative;
+    display: flex;
+    min-width: 100vw;
+    min-height: 100vh;
+    align-items: center;
+    flex-direction: column;
+    background: radial-gradient(circle at 16% 83%, rgba(148, 148, 148, 0.06) 0%, rgba(148, 148, 148, 0.06) 50%, rgba(63, 63, 63, 0.06) 50%, rgba(63, 63, 63, 0.06) 100%), radial-gradient(circle at 68% 87%, rgba(66, 66, 66, 0.06) 0%, rgba(66, 66, 66, 0.06) 50%, rgba(105, 105, 105, 0.11) 50%, rgba(105, 105, 105, 0.11) 100%), radial-gradient(circle at 38% 50%, rgba(123, 123, 123, 0.06) 0%, rgba(123, 123, 123, 0.06) 50%, rgba(172, 172, 172, 0.12) 50%, rgba(172, 172, 172, 0.12) 100%), linear-gradient(90deg, hsl(18, 0%, 1%), hsl(18, 0%, 1%));
+}
+
+#Skills-Page>header {
+    position: relative;
+    display: grid;
+    width: 35vw;
+    height: 60px;
+    margin: 20px;
+    place-items: center;
+    border-radius: 12px;
+    color: var(--Color3);
+    background-color: var(--Color2);
+    box-shadow: 0 0 20px var(--Color1);
+}
+
+#Skills-Page>header::after {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 8px;
+    border-radius: 20px 20px 0 0;
+    background-color: var(--Color3);
+}
+
+#Skills-Page>header::before {
+    position: absolute;
+    content: "";
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 8px;
+    border-radius: 0 0 20px 20px;
+    background-color: var(--Color3);
+}
+
+#Skills-Page>main {
+    display: grid;
+    gap: 20px;
+    min-width: fit-content;
+    min-height: fit-content;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.Skill-Body {
+    position: relative;
+    width: 130px;
+    height: 130px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px var(--Color1);
+    background-color: rgba(240, 248, 255, 0.8);
+}
+
+.Skill-Body>h6 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 10px;
+    font-weight: bold;
+    color: aliceblue;
+    transform: translate(-50%, -50%) scale(1.5);
+}
+
+.Skill-Body>svg {
+    transform: rotate(-90deg);
+}
+
+.Skill-Body>svg>circle {
+    stroke-width: 8;
+    stroke-linecap: round;
+    stroke-dasharray: 314.160;
+}
+
+@keyframes Progress-Animation {
+    0% {
+        stroke-dashoffset: 314.160;
+    }
+}
+
+@media (height<=400px) {
+    #Skills-Page {
+        min-width: 100vw;
+        min-height: 200vh;
+    }
+}
+
+@media (width<=800px) {
+    #Skills-Page>header {
+        width: 50vw;
+    }
+
+    #Skills-Page>main {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (width<=400px) {
+    #Skills-Page>main {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (height>=1000px) and (width>=800px) {
+    #Skills-Page {
+        min-width: 100vw;
+        min-height: 50vh;
+    }
+}

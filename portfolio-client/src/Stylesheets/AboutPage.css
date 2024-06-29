@@ -1,0 +1,161 @@
+#About-Page {
+    position: relative;
+    display: flex;
+    min-width: 100vw;
+    min-height: 100vh;
+    align-items: center;
+    flex-direction: column;
+    background: radial-gradient(circle at 16% 83%, rgba(148, 148, 148, 0.06) 0%, rgba(148, 148, 148, 0.06) 50%, rgba(63, 63, 63, 0.06) 50%, rgba(63, 63, 63, 0.06) 100%), radial-gradient(circle at 68% 87%, rgba(66, 66, 66, 0.06) 0%, rgba(66, 66, 66, 0.06) 50%, rgba(105, 105, 105, 0.11) 50%, rgba(105, 105, 105, 0.11) 100%), radial-gradient(circle at 38% 50%, rgba(123, 123, 123, 0.06) 0%, rgba(123, 123, 123, 0.06) 50%, rgba(172, 172, 172, 0.12) 50%, rgba(172, 172, 172, 0.12) 100%), linear-gradient(90deg, hsl(18, 0%, 1%), hsl(18, 0%, 1%));
+}
+
+.About-Header {
+    position: relative;
+    display: grid;
+    width: 50vw;
+    height: 60px;
+    margin: 20px;
+    place-items: center;
+    border-radius: 12px;
+    color: var(--Color3);
+    background-color: var(--Color1);
+    box-shadow: 0 0 20px var(--Color1);
+}
+
+.About-Header::after{
+    position: absolute;
+    content: "";
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 8px;
+    border-radius: 0 0 20px 20px;
+    background-color: var(--Color3);
+}
+
+.About-Main {
+    display: flex;
+    width: 60vw;
+    overflow: hidden;
+    color: aliceblue;
+    border-radius: 12px;
+    flex-direction: column;
+    min-height: fit-content;
+    border: 2px solid var(--Color1);
+    box-shadow: 0 0 20px var(--Color1);
+}
+
+.About-Headings {
+    position: relative;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    color: var(--Color1);
+    justify-content: space-evenly;
+}
+
+.About-Headings>h3 {
+    padding: 0 3px;
+    cursor: pointer;
+}
+
+.About-Headings>h3::after {
+    position: absolute;
+    content: '';
+    left: 50%;
+    width: 40%;
+    height: 5px;
+    bottom: -2px;
+    border-radius: 2px;
+    transition: all 0.8s;
+    transform: translate(-50%, -50%);
+    background-color: var(--Color2);
+}
+
+.Description.active,
+.Education.active {
+    transition: all 0.8s;
+    transform: scale(1.1);
+}
+
+.Description.active::after,
+.Education.active::after {
+    width: 100%;
+}
+
+.Contents-Container {
+    min-width: 90vw;
+    min-height: calc(100vh - 200px);
+}
+
+.About-Content1,
+.About-Content2 {
+    padding: 20px;
+    max-width: 100%;
+    overflow-y: auto;
+    max-height: 100%;
+    transition: all 1s;
+    position: absolute;
+    text-align: justify;
+}
+
+.About-Content1::-webkit-scrollbar,
+.About-Content2::-webkit-scrollbar {
+    width: 5px;
+    background-color: transparent;
+}
+
+.About-Content1::-webkit-scrollbar-thumb,
+.About-Content2::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: var(--Color2);
+}
+
+.About-Content2>div {
+    padding: 8px 0;
+    text-align: start;
+    border-radius: 2px;
+    margin-bottom: 10px;
+    border-bottom: 3px solid var(--Color1);
+}
+
+.About-Content2>div>h3 {
+    color: var(--Color1);
+}
+
+.About-Main>span {
+    width: 100%;
+    height: 10px;
+    z-index: 1;
+    background-color: var(--Color1);
+    box-shadow: 0 -8px 20px var(--Color1),
+        0 -8px 20px var(--Color1);
+}
+
+@media (height<=400px) {
+    #About-Page {
+        min-width: 100vw;
+        min-height: 200vh;
+    }
+
+    .Contents-Container {
+        min-height: calc(200vh - 400px);
+    }
+}
+
+@media (width<=800px) {
+    .About-Main {
+        min-width: fit-content;
+    }
+}
+
+@media (height>=1000px) and (width>=800px) {
+    #About-Page {
+        min-width: 100vw;
+        min-height: 50vh;
+    }
+
+    .Contents-Container {
+        min-height: calc(50vh - 600px);
+    }
+}

@@ -1,0 +1,83 @@
+body{
+    position: relative;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    min-height: 500vh;
+    user-select: none;
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+
+:root{
+    --Bg-Color: #232323;
+    --Color1: #0ef;
+    --Color2: #ff3366;
+    --Color3: #2B124C;
+}
+
+.App-Layout-Page{
+    position: relative;
+    width: 100vw;
+    min-height: 500vh;
+    overflow-x: hidden;
+    background-color: antiquewhite;
+}
+
+body::-webkit-scrollbar, .App-Layout-Page::-webkit-scrollbar{
+    display: none;
+}
+
+.Scroll-to-Top-Icon{
+    position: fixed;
+    display: flex;
+    z-index: 99;
+    right: 4px;
+    bottom: 8px;
+    font-size: 36px;
+    border-radius: 50%;
+    color: var(--Color2);
+    box-shadow: 0 0 16px;
+    background-color: var(--Color3);
+}
+
+.Scroll-to-Top-Icon>a{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    text-decoration: none;
+}
+
+@keyframes Scroll-to-top-Btn-Animation {
+    0%{
+        transform: translateY(0px);
+    }
+    50%{
+        transform: translateY(-5px);
+    }
+}
+
+@media (height<=400px) {
+    body{
+        width: 100vw;
+        min-height: 1000vh;
+    }
+    .App-Layout-Page{
+        width: 100vw;
+        min-height: 1000vh;
+    }
+}
+
+@media (height>=1000px) and (width>=500px){
+    body{
+        width: 100vw;
+        min-height: 250vh;
+    }
+    .App-Layout-Page{
+        width: 100vw;
+        min-height: 250vh;
+        background-color: #0ef;
+    }
+}
