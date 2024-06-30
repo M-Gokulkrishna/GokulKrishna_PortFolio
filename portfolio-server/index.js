@@ -14,7 +14,7 @@ const msgTransporter = nodemailer.createTransport({
 });
 // Using Middleware
 app.use(cors({
-    origin: "https://gokulkrishna-portfolio-client.vercel.app/"
+    origin: "https://gokulkrishna-portfolio-client.vercel.app"
 }));
 app.use(express.json());
 // Testing Api uri Route
