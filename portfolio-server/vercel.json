@@ -10,7 +10,7 @@
       {
          "src": "/(.*)",
          "dest": "/",
-          "methods": ["GET","POST", "OPTIONS"],
+          "methods": ["GET","POST","OPTIONS"],
           "headers": {
              "Access-Control-Allow-Origin": "https://gokulkrishna-portfolio-client.vercel.app",
              "Access-Control-Allow-Credentials": "true",

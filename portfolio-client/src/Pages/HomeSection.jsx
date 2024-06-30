@@ -3,7 +3,7 @@ import '../Stylesheets/HomePage.css';
 import React, { useEffect } from 'react';
 import Header from '../Components/Header.jsx';
 import ProfilePic from '../assets/Profile_pic.png';
-import ResumePdf from '../assets/files/GokulKrishna_Resume_16.pdf';
+import ResumePdf from '../assets/files/GokulKrishna_Resume.pdf';
 import { FaLinkedin, FaGithub, FaEnvelope } from 'react-icons/fa';
 
 const HomeSection = () => {
