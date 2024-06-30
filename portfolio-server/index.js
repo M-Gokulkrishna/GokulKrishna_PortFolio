@@ -13,7 +13,9 @@ const msgTransporter = nodemailer.createTransport({
     }
 });
 // Using Middleware
-app.use(cors());
+app.use(cors({
+    origin: "https://gokulkrishna-portfolio-client.vercel.app/"
+}));
 app.use(express.json());
 // Testing Api uri Route
 app.get('/', (request, response) => {
@@ -26,9 +28,9 @@ app.post('/send-email', (req, res) => {
         from: VisitorEmail,
         to: process.env.RECEPIENT_EMAIL,
         subject: `Email Sent From ${VisitorName}`,
-        text: `Portfolio Message\n
+        text: `Portfolio Message:\n
                From: ${VisitorEmail},\n
-               To: ${process.env.RECEPIENT_EMAIL}\nMessage: \n\n\t ${VisitorMessage}`
+               To: ${process.env.RECEPIENT_EMAIL}\n\nMessage:\n\n\t${VisitorMessage}`
     }
     msgTransporter.sendMail(mailConfigurations, (error, _) => {
         if (error) {
