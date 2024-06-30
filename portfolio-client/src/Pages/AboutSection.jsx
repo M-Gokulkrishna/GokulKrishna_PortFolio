@@ -23,7 +23,7 @@ const AboutSection = () => {
                 </div>
                 <div className="Contents-Container">
                     <div className='About-Content1' style={(!LableClick) ? { transform: "translateY(0%)" } : { transform: "translateY(180%)" }}>
-                        <h5>Passionate front end developer have expertise in React js. Specialize in building and designing a Responsive and visually appealing Websites. I have competence in various tools such as HTML, CSS, JavaScript, React.js, Git, MySQL, Mongo DB, Node.js & Express.js. <hr /> I'm a Enthusiastic individual to learn new technologies and enhancing My skiils. I ensure that I will provide a successful outcomes in my work and contribute to the success of the Organization.</h5>
+                        <h5>Passionate front end developer have expertise in React js. Specialize in building and designing a Responsive and visually appealing Websites. I have competence in various technologies such as HTML, CSS, JavaScript, Python, React.js, Git, MySQL, Mongo DB, Node.js & Express.js. <hr /> I'm a Enthusiastic individual to learn new technologies and enhancing My skiils. I ensure that I will provide a successful outcomes in my work and contribute to the success of the Organization.</h5>
                     </div>
                     <div className='About-Content2' style={(LableClick) ? { transform: "translateY(0%)" } : { transform: "translateY(180%)" }}>
                         <div>

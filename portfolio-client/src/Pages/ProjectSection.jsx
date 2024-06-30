@@ -14,9 +14,9 @@ const ProjectSection = () => {
   const [RefElementHeight, setRefElementHeight] = useState(0);
   const CarouselContent =
     [
-      { id: 0, Heading: 'Attendance WebApp', anchorLink: '/', Description: 'A MERN stack web app designed to replace the traditional paper - based student attendance system with a modern digital solution for students who use the college Bus service.' },
+      { id: 0, Heading: 'Attendance WebApp', anchorLink: '/', Description: 'A MERN stack web app, a sleek design to replace the traditional paper - based student attendance system with a modern digital solution for students who use the college Bus service.' },
       { id: 1, Heading: 'Ludo Game', anchorLink: 'https://github.com/M-Gokulkrishna/Ludo-Game-JS', Description: 'Developed a Visually Appealing Ludo Game Using HTML, CSS, JavaScript. Interactive Elements, Logics & Animations Provides a wonderful Gaming Experience.' },
-      { id: 2, Heading: 'Weather WebApp', anchorLink: 'https://github.com/M-Gokulkrishna/Weather_App_ReactJS', Description: 'A Good Looking Weather App. Which Provides Current Weather Conditions of the Given City Using Open weather map Api Service.' },
+      { id: 2, Heading: 'Weather WebApp', anchorLink: 'https://github.com/M-Gokulkrishna/Weather_App_ReactJS', Description: 'A Good Looking Weather App, Which provides current Weather Conditions of the given City using Open weather map api service and We can pin our favourite city in drafts.' },
     ];
 
   useEffect(() => {
