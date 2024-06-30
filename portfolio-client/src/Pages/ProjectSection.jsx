@@ -23,7 +23,7 @@ const ProjectSection = () => {
     AOS.init({
       duration: 900
     });
-    
+
   }, [])
 
   function handleNextClick() {
@@ -96,9 +96,7 @@ const ProjectSection = () => {
           </div>
         </div>
       </div>
-      <div className='GitHub-Btn'>
-        <a href="http://github.com/M-Gokulkrishna/" target="_blank" rel="noopener noreferrer">Visit GitHub</a>
-      </div>
+      <a href="http://github.com/M-Gokulkrishna/" target="_blank" rel="noopener noreferrer" className='GitHub-Btn'>Visit GitHub</a>
     </div>
   )
 }
