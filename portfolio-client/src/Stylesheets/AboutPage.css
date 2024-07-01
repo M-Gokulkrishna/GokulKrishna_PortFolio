@@ -85,30 +85,16 @@
 
 .Contents-Container {
     min-width: 90vw;
-    min-height: calc(100vh - 200px);
 }
 
 .About-Content1,
 .About-Content2 {
     padding: 20px;
     max-width: 100%;
-    overflow-y: auto;
     max-height: 100%;
     transition: all 1s;
     position: absolute;
     text-align: justify;
-}
-
-.About-Content1::-webkit-scrollbar,
-.About-Content2::-webkit-scrollbar {
-    width: 5px;
-    background-color: transparent;
-}
-
-.About-Content1::-webkit-scrollbar-thumb,
-.About-Content2::-webkit-scrollbar-thumb {
-    border-radius: 10px;
-    background-color: var(--Color2);
 }
 
 .About-Content2>div {
@@ -137,10 +123,6 @@
         min-width: 100vw;
         min-height: 200vh;
     }
-
-    .Contents-Container {
-        min-height: calc(200vh - 400px);
-    }
 }
 
 @media (width<=800px) {
@@ -153,9 +135,5 @@
     #About-Page {
         min-width: 100vw;
         min-height: 50vh;
-    }
-
-    .Contents-Container {
-        min-height: calc(50vh - 600px);
     }
 }
