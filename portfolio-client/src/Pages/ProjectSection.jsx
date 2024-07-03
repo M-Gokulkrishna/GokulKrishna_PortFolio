@@ -10,6 +10,7 @@ let ImageArray = [CarouselPic1, CarouselPic2, CarouselPic3];
 const ProjectSection = () => {
   const CarouselRef = useRef(null);
   const [CarouselCount, setCarouselCount] = useState(0);
+  const [AnimationFlag, setAnimationFlag] = useState(true);
   const [RefElementWidth, setRefElementWidth] = useState(0);
   const [RefElementHeight, setRefElementHeight] = useState(0);
   const CarouselContent =
@@ -27,9 +28,11 @@ const ProjectSection = () => {
   }, [])
 
   function handleNextClick() {
+    setAnimationFlag(false);
     setCarouselCount(PrevCount => PrevCount + 1);
   }
   function handlePrevClick() {
+    setAnimationFlag(false);
     setCarouselCount(PrevCount => PrevCount - 1);
   }
   const DescriptionElements = CarouselContent.map(eachContent => (
@@ -74,10 +77,22 @@ const ProjectSection = () => {
 
   if (CarouselCount > (ImageArray.length - 1)) {
     setCarouselCount(0);
+
   }
   else if (CarouselCount < 0) {
     setCarouselCount(ImageArray.length - 1);
   }
+
+  useEffect(() => {
+    if(AnimationFlag){
+      const Timer = setInterval(() => {
+        setCarouselCount(c => c + 1);
+      }, 2400);
+      return () => {
+        clearInterval(Timer);
+      }
+    }
+  }, [AnimationFlag])
 
   return (
     <div id='Projects-Page'>
