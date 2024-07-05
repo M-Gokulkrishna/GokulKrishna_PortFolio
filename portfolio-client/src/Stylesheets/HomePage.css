@@ -166,7 +166,7 @@ nav>ol>li>a{
     }
 }
 
-@media (width<=800px) {
+@media (width<=880px) {
     #Home-Page>header {
         z-index: 99;
         flex-direction: column;
