@@ -18,7 +18,9 @@ const HomeSection = () => {
       <main>
         <section className='fw-bolder mx-2 p-2' data-aos="fade-right">
           <h2>Hi, There !</h2>
-          <h1>I'm <span style={{ color: "var(--Color1)" }}>Gokul Krishna M</span></h1>
+          <div>
+            <h1 className='Name-Tag'>I'm <span style={{color: 'var(--Color1)'}}>Gokul Krishna M</span>&ensp;</h1>
+          </div>
           <p>This is My Official Portfolio Website to <br /> Showcase My Works Related to My Skills...</p>
           <br />
           <footer className='Home-Icons-Btn'>

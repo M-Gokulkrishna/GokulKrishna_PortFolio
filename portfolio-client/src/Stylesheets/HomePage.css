@@ -31,13 +31,18 @@ nav {
 
 nav>ol {
     display: flex;
-    margin: auto;
     gap: 40px;
+    margin: auto;
     list-style: none;
 }
 
 nav>ol>li{
     position: relative;
+}
+
+nav>ol>li:hover{
+    transition: all 0.4s;
+    transform: scale(1.1);
 }
 
 nav>ol>li>a{
@@ -140,6 +145,26 @@ nav>ol>li>a{
         width: 100%;
         height: 100%;
         border-radius: inherit;
+    }
+}
+
+.Name-Tag-Container{
+    width: fit-content;
+}
+
+.Name-Tag{
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3.4px solid var(--Color1);
+    animation: Typing-Animation 4s steps(55, end) infinite;
+}
+
+@keyframes Typing-Animation {
+    0%{
+        width: 0%;
+    }
+    100%{
+        width: 100%;
     }
 }
 
