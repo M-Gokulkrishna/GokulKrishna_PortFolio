@@ -1,19 +1,34 @@
-#Skills-Page {
+:root {
+    --Bg-Color: #232323;
+    --BarScale: 50px;
+    --Color1: #0ef;
+    --Color2: #ff3366;
+    --Color3: #2B124C;
+    --BarRadius: 50;
+    --MenuBarSize: 450px;
+    --CirCumference: 282.75;
+    --Offset1: calc(var(--MenuBarSize) / 2 - var(--BarScale));
+    --Offset2: calc(var(--Offset1) / 1.42);
+}
+
+.Skills-Page {
     position: relative;
     display: flex;
-    min-width: 100vw;
+    width: 100vw;
+    overflow: hidden;
     min-height: 100vh;
     align-items: center;
     flex-direction: column;
+    justify-content: center;
     background: radial-gradient(circle at 16% 83%, rgba(148, 148, 148, 0.06) 0%, rgba(148, 148, 148, 0.06) 50%, rgba(63, 63, 63, 0.06) 50%, rgba(63, 63, 63, 0.06) 100%), radial-gradient(circle at 68% 87%, rgba(66, 66, 66, 0.06) 0%, rgba(66, 66, 66, 0.06) 50%, rgba(105, 105, 105, 0.11) 50%, rgba(105, 105, 105, 0.11) 100%), radial-gradient(circle at 38% 50%, rgba(123, 123, 123, 0.06) 0%, rgba(123, 123, 123, 0.06) 50%, rgba(172, 172, 172, 0.12) 50%, rgba(172, 172, 172, 0.12) 100%), linear-gradient(90deg, hsl(18, 0%, 1%), hsl(18, 0%, 1%));
 }
 
-#Skills-Page>header {
+.Skills-Page h1 {
     position: relative;
     display: grid;
     width: 35vw;
     height: 60px;
-    margin: 20px;
+    margin: 10px;
     place-items: center;
     border-radius: 12px;
     color: var(--Color3);
@@ -21,7 +36,7 @@
     box-shadow: 0 0 20px var(--Color1);
 }
 
-#Skills-Page>header::after {
+.Skills-Page h1::after {
     position: absolute;
     content: "";
     left: 0;
@@ -32,7 +47,7 @@
     background-color: var(--Color3);
 }
 
-#Skills-Page>header::before {
+.Skills-Page h1::before {
     position: absolute;
     content: "";
     left: 0;
@@ -43,75 +58,206 @@
     background-color: var(--Color3);
 }
 
-#Skills-Page>main {
-    display: grid;
-    gap: 20px;
-    min-width: fit-content;
-    min-height: fit-content;
-    grid-template-columns: repeat(4, 1fr);
-}
-
-.Skill-Body {
+.Skills-Page main {
     position: relative;
-    width: 130px;
-    height: 130px;
-    border-radius: 20px;
-    box-shadow: 0 0 10px var(--Color1);
-    background-color: rgba(240, 248, 255, 0.8);
+    display: flex;
+    width: 100vw;
+    gap: 20px;
+    padding: 20px;
+    overflow-x: hidden;
+    align-items: center;
+    min-height: fit-content;
+    justify-content: space-around;
 }
 
-.Skill-Body>h6 {
+.Skills-Page main::-webkit-scrollbar {
+    display: none;
+}
+
+.Menu-Plus-Icon {
     position: absolute;
+    display: flex;
+    z-index: 99;
+    font-size: 80px;
+    cursor: pointer;
+    border-radius: 50%;
+    transform: rotate(-45deg);
+    transition: transform 0.8s;
+    background-color: aliceblue;
+}
+
+.Skills-Page>main>section {
+    position: relative;
+    display: flex;
+    width: 450px;
+    height: 450px;
+    align-items: center;
+    justify-content: center;
+}
+
+.Outer-Menu-Container {
+    position: relative;
+    display: flex;
+    width: 450px;
+    height: 450px;
+    align-items: center;
+    justify-content: center;
+}
+
+.Inner-Menu-Container {
+    display: flex;
+    z-index: 1;
     top: 50%;
     left: 50%;
-    font-size: 10px;
-    font-weight: bold;
-    color: aliceblue;
-    transform: translate(-50%, -50%) scale(1.5);
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    transition: transform 1s;
+    transform: rotate(-180deg);
+    /* background-color: rgba(250, 235, 215, 0.105); */
 }
 
-.Skill-Body>svg {
+.Menu-Plus-Icon.active {
+    transform: rotate(0deg);
+}
+
+.Menu-Plus-Icon.active+.Inner-Menu-Container {
+    transition: transform 1s;
     transform: rotate(-90deg);
 }
 
-.Skill-Body>svg>circle {
-    stroke-width: 8;
+.Svg-Container {
+    position: absolute;
+    display: flex;
+    padding: 4px;
+    border-radius: 20%;
+    align-items: center;
+    justify-content: center;
+    transition: transform 1s;
+}
+
+.Svg-Container>h6{
+    position: absolute;
+    margin: auto;
+    font-weight: bold;
+    color: aliceblue;
+    text-shadow: 0 0 30px var(--Color1);
+    transform: rotate(90deg) scaleX(0.8) scaleY(1.4);
+}
+
+.Svg-Container>svg>circle {
+    fill: rgba(58, 58, 58, 0.78);
     stroke-linecap: round;
-    stroke-dasharray: 314.160;
+    stroke-dasharray: var(--CirCumference);
+}
+
+.Menu-Plus-Icon.active+.Inner-Menu-Container>.Svg-Container>svg>circle {
+    stroke-linecap: round;
+    stroke-dasharray: var(--CirCumference);
+    animation: Progress-Animation 1.5s 1.5s ease-in-out;
+}
+
+.Menu-Plus-Icon.active+.Inner-Menu-Container>.Svg-Container:nth-child(1) {
+    transform: translateX(var(--Offset1));
+}
+
+.Menu-Plus-Icon.active+.Inner-Menu-Container>.Svg-Container:nth-child(2) {
+    transform: translateY(var(--Offset1));
+}
+
+.Menu-Plus-Icon.active+.Inner-Menu-Container>.Svg-Container:nth-child(3) {
+    transform: translateX(calc(var(--Offset1) * -1));
+}
+
+.Menu-Plus-Icon.active+.Inner-Menu-Container>.Svg-Container:nth-child(4) {
+    transform: translateY(calc(var(--Offset1) * -1));
+}
+
+.Menu-Plus-Icon.active+.Inner-Menu-Container>.Svg-Container:nth-child(5) {
+    transform: translateX(var(--Offset2)) translateY(var(--Offset2));
+}
+
+.Menu-Plus-Icon.active+.Inner-Menu-Container>.Svg-Container:nth-child(6) {
+    transform: translateX(var(--Offset2)) translateY(calc(var(--Offset2) * -1));
+}
+
+.Menu-Plus-Icon.active+.Inner-Menu-Container>.Svg-Container:nth-child(7) {
+    transform: translateX(calc(var(--Offset2) * -1)) translateY(calc(var(--Offset2) * -1));
+}
+
+.Menu-Plus-Icon.active+.Inner-Menu-Container>.Svg-Container:nth-child(8) {
+    transform: translateX(calc(var(--Offset2) * -1)) translateY(calc(var(--Offset2)));
 }
 
 @keyframes Progress-Animation {
     0% {
-        stroke-dashoffset: 314.160;
+        stroke-dashoffset: var(--CirCumference);
     }
 }
 
 @media (height<=400px) {
-    #Skills-Page {
-        min-width: 100vw;
+    .Skills-Page {
+        width: 100vw;
         min-height: 200vh;
     }
 }
 
-@media (width<=800px) {
-    #Skills-Page>header {
-        width: 50vw;
+@media (width<=980px) {
+    :root {
+        --MenuBarSize: 500px;
     }
 
-    #Skills-Page>main {
-        grid-template-columns: repeat(3, 1fr);
+    .Skills-Page main {
+        flex-direction: column;
+    }
+
+    .Skills-Page>main>section,
+    .Outer-Menu-Container {
+        width: 500px;
+        height: 500px;
     }
 }
 
-@media (width<=400px) {
-    #Skills-Page>main {
-        grid-template-columns: repeat(2, 1fr);
+@media (width<=500px) {
+    :root {
+        --MenuBarSize: 320px;
+        --CirCumference: 220;
+    }
+
+    .Skills-Page h1 {
+        width: 50vw;
+    }
+
+    .Skills-Page main {
+        padding: 0;
+    }
+
+    .Skills-Page>main>section,
+    .Outer-Menu-Container {
+        width: 320px;
+        height: 320px;
+    }
+
+    .Menu-Plus-Icon {
+        font-size: 60px;
+    }
+
+    /* .Svg-Container {
+        padding: 0;
+        border-radius: 50%;
+        background-color: transparent;
+    } */
+
+    .Svg-Container>h6{
+        transform: rotate(90deg) scaleX(0.6) scaleY(1.2);
     }
 }
 
 @media (height>=1000px) and (width>=800px) {
-    #Skills-Page {
-        min-width: 100vw;
+    .Skills-Page {
+        width: 100vw;
         min-height: 50vh;
     }
 }

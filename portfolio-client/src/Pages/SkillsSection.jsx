@@ -1,67 +1,137 @@
-import AOS from 'aos';
 import '../Stylesheets/SkillsPage.css';
-import React, { useEffect } from 'react';
+import { FaTimes } from 'react-icons/fa';
+import React, { useEffect, useState } from 'react';
 
-const SkillsSection = ({ScrollValues}) => {
+const SkillsSection = ({ ScrollValues }) => {
+    const [MenuClick, setMenuClick] = useState(false);
+    const [ScreenWidth, setScreenWidth] = useState(window.innerWidth);
     useEffect(() => {
-        AOS.init({
-            duration: 900
+        setScreenWidth(window.innerWidth);
+        window.addEventListener('resize', () => {
+            setScreenWidth(window.innerWidth);
         });
-    }, []);
+    }, [ScreenWidth])
+    useEffect(()=>{
+        (ScrollValues >= (window.innerHeight * 2) - 170) ? setMenuClick(true) : null;
+    }, [ScrollValues])
     return (
-        <div id='Skills-Page'>
-            <header data-aos="zoom-out">
-                <h1 className='fw-bold my-auto'>Skills</h1>
-            </header>
-            <main className='m-auto'>
-                <div className="Skill-Body" data-aos="fade-right">
-                    <svg width="130" height="130">
-                        <circle cx={65} cy={65} r={50} stroke='orangered' style={(ScrollValues>= window.innerHeight*2) ? { animation: "Progress-Animation 2s 1s ease-in-out", strokeDashoffset: 'calc(314.160 - (314.160 * 88) / 100)' } : { animation: "none", strokeDashoffset: 'calc(314.160 - (314.160 * 88) / 100)' }} className='Progress-Circle'></circle>
-                    </svg>
-                    <h6>HTML</h6>
-                </div>
-                <div className="Skill-Body" data-aos="fade-left">
-                    <svg width="130" height="130">
-                        <circle cx={65} cy={65} r={50} stroke='#0af' style={(ScrollValues>= window.innerHeight*2) ? { animation: "Progress-Animation 2s 1s ease-in-out", strokeDashoffset: 'calc(314.160 - (314.160 * 82) / 100)' } : { animation: "none", strokeDashoffset: 'calc(314.160 - (314.160 * 82) / 100)' }} className='Progress-Circle'></circle>
-                    </svg>
-                    <h6>CSS</h6>
-                </div>
-                <div className="Skill-Body" data-aos="fade-right">
-                    <svg width="130" height="130">
-                        <circle cx={65} cy={65} r={50} stroke='springgreen' style={(ScrollValues>= window.innerHeight*2) ? { animation: "Progress-Animation 2s 1s ease-in-out", strokeDashoffset: 'calc(314.160 - (314.160 * 75) / 100)' } : { animation: "none", strokeDashoffset: 'calc(314.160 - (314.160 * 75) / 100)' }} className='Progress-Circle'></circle>
-                    </svg>
-                    <h6>BOOTSTRAP</h6>
-                </div>
-                <div className="Skill-Body" data-aos="fade-left">
-                    <svg width="130" height="130">
-                        <circle cx={65} cy={65} r={50} stroke='#df0' style={(ScrollValues>= window.innerHeight*2) ? { animation: "Progress-Animation 2s 1s ease-in-out", strokeDashoffset: 'calc(314.160 - (314.160 * 80) / 100)' } : { animation: "none", strokeDashoffset: 'calc(314.160 - (314.160 * 80) / 100)' }} className='Progress-Circle'></circle>
-                    </svg>
-                    <h6>REACT JS</h6>
-                </div>
-                <div className="Skill-Body" data-aos="fade-right">
-                    <svg width="130" height="130">
-                        <circle cx={65} cy={65} r={50} stroke='#0ef' style={(ScrollValues>= window.innerHeight*2) ? { animation: "Progress-Animation 2s 1s ease-in-out", strokeDashoffset: 'calc(314.160 - (314.160 * 70) / 100)' } : { animation: "none", strokeDashoffset: 'calc(314.160 - (314.160 * 70) / 100)' }} className='Progress-Circle'></circle>
-                    </svg>
-                    <h6>MySQL</h6>
-                </div>
-                <div className="Skill-Body" data-aos="fade-left">
-                    <svg width="130" height="130">
-                        <circle cx={65} cy={65} r={50} stroke='#d0d' style={(ScrollValues>= window.innerHeight*2) ? { animation: "Progress-Animation 2s 1s ease-in-out", strokeDashoffset: 'calc(314.160 - (314.160 * 55) / 100)' } : { animation: "none", strokeDashoffset: 'calc(314.160 - (314.160 * 55) / 100)' }} className='Progress-Circle'></circle>
-                    </svg>
-                    <h6>MONGO DB</h6>
-                </div>
-                <div className="Skill-Body" data-aos="fade-right">
-                    <svg width="130" height="130">
-                        <circle cx={65} cy={65} r={50} stroke='chartreuse' style={(ScrollValues>= window.innerHeight*2) ? { animation: "Progress-Animation 2s 1s ease-in-out", strokeDashoffset: 'calc(314.160 - (314.160 * 70) / 100)' } : { animation: "none", strokeDashoffset: 'calc(314.160 - (314.160 * 70) / 100)' }} className='Progress-Circle'></circle>
-                    </svg>
-                    <h6>NODE JS</h6>
-                </div>
-                <div className="Skill-Body" data-aos="fade-left">
-                    <svg width="130" height="130">
-                        <circle cx={65} cy={65} r={50} stroke='#ff3366' style={(ScrollValues>= window.innerHeight*2) ? { animation: "Progress-Animation 2s 1s ease-in-out", strokeDashoffset: 'calc(314.160 - (314.160 * 65) / 100)' } : { animation: "none", strokeDashoffset: 'calc(314.160 - (314.160 * 65) / 100)' }} className='Progress-Circle'></circle>
-                    </svg>
-                    <h6>EXPRESS JS</h6>
-                </div>
+        <div className='Skills-Page' id='Skills-Page'>
+            <h1 className='fw-bold'>SKILLS</h1>
+            <main>
+                <section>
+                    <div className="Outer-Menu-Container">
+                        <div className={`Menu-Plus-Icon ${(MenuClick) ? 'active' : ''}`} onClick={() => setMenuClick(!MenuClick)}>
+                            <FaTimes />
+                        </div>
+                        <div className="Inner-Menu-Container">
+                            <div className="Svg-Container">
+                                <svg width={100} height={100}>
+                                    <circle cx={50} cy={50} r={(ScreenWidth < 500) ? 35 : 45} strokeWidth={(ScreenWidth < 500) ? 6 : 8} style={(MenuClick) ? { strokeDashoffset: 'calc(var(--CirCumference) - (var(--CirCumference) * 88) / 100)' } : {}} stroke='#ff3366'></circle>
+                                </svg>
+                                <h6>HTML</h6>
+                            </div>
+                            <div className="Svg-Container">
+                                <svg width={100} height={100}>
+                                    <circle cx={50} cy={50} r={(ScreenWidth < 500) ? 35 : 45} strokeWidth={(ScreenWidth < 500) ? 6 : 8} style={(MenuClick) ? { strokeDashoffset: 'calc(var(--CirCumference) - (var(--CirCumference) * 82) / 100)' } : {}} stroke='chartreuse'></circle>
+                                </svg>
+                                <h6>VANILLA JS</h6>
+                            </div>
+                            <div className="Svg-Container">
+                                <svg width={100} height={100}>
+                                    <circle cx={50} cy={50} r={(ScreenWidth < 500) ? 35 : 45} strokeWidth={(ScreenWidth < 500) ? 6 : 8} style={(MenuClick) ? { strokeDashoffset: 'calc(var(--CirCumference) - (var(--CirCumference) * 30) / 100)' } : {}} stroke='#d0d'></circle>
+                                </svg>
+                                <h6>GSAP</h6>
+                            </div>
+                            <div className="Svg-Container">
+                                <svg width={100} height={100}>
+                                    <circle cx={50} cy={50} r={(ScreenWidth < 500) ? 35 : 45} strokeWidth={(ScreenWidth < 500) ? 6 : 8} style={(MenuClick) ? { strokeDashoffset: 'calc(var(--CirCumference) - (var(--CirCumference) * 75) / 100)' } : {}} stroke='orange'></circle>
+                                </svg>
+                                <h6>REACT JS</h6>
+                            </div>
+                            <div className="Svg-Container">
+                                <svg width={100} height={100}>
+                                    <circle cx={50} cy={50} r={(ScreenWidth < 500) ? 35 : 45} strokeWidth={(ScreenWidth < 500) ? 6 : 8} style={(MenuClick) ? { strokeDashoffset: 'calc(var(--CirCumference) - (var(--CirCumference) * 84) / 100)' } : {}} stroke='#0ef'></circle>
+                                </svg>
+                                <h6>CSS</h6>
+                            </div>
+                            <div className="Svg-Container">
+                                <svg width={100} height={100}>
+                                    <circle cx={50} cy={50} r={(ScreenWidth < 500) ? 35 : 45} strokeWidth={(ScreenWidth < 500) ? 6 : 8} style={(MenuClick) ? { strokeDashoffset: 'calc(var(--CirCumference) - (var(--CirCumference) * 50) / 100)' } : {}} stroke='yellow'></circle>
+                                </svg>
+                                <h6>REDUX</h6>
+                            </div>
+                            <div className="Svg-Container">
+                                <svg width={100} height={100}>
+                                    <circle cx={50} cy={50} r={(ScreenWidth < 500) ? 35 : 45} strokeWidth={(ScreenWidth < 500) ? 6 : 8} style={(MenuClick) ? { strokeDashoffset: 'calc(var(--CirCumference) - (var(--CirCumference) * 70) / 100)' } : {}} stroke='hotpink'></circle>
+                                </svg>
+                                <h6>NPM</h6>
+                            </div>
+                            <div className="Svg-Container">
+                                <svg width={100} height={100}>
+                                    <circle cx={50} cy={50} r={(ScreenWidth < 500) ? 35 : 45} strokeWidth={(ScreenWidth < 500) ? 6 : 8} style={(MenuClick) ? { strokeDashoffset: 'calc(var(--CirCumference) - (var(--CirCumference) * 70) / 100)' } : {}} stroke='#0af'></circle>
+                                </svg>
+                                <h6>BOOTSTRAP</h6>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <div className="Outer-Menu-Container">
+                        <div className={`Menu-Plus-Icon ${(MenuClick) ? 'active' : ''}`} onClick={() => setMenuClick(!MenuClick)}>
+                            <FaTimes />
+                        </div>
+                        <div className="Inner-Menu-Container">
+                            <div className="Svg-Container">
+                                <svg width={100} height={100}>
+                                    <circle cx={50} cy={50} r={(ScreenWidth < 500) ? 35 : 45} strokeWidth={(ScreenWidth < 500) ? 6 : 8} style={(MenuClick) ? { strokeDashoffset: 'calc(var(--CirCumference) - (var(--CirCumference) * 75) / 100)' } : {}} stroke='#0af'></circle>
+                                </svg>
+                                <h6>MYSQL</h6>
+                            </div>
+                            <div className="Svg-Container">
+                                <svg width={100} height={100}>
+                                    <circle cx={50} cy={50} r={(ScreenWidth < 500) ? 35 : 45} strokeWidth={(ScreenWidth < 500) ? 6 : 8} style={(MenuClick) ? { strokeDashoffset: 'calc(var(--CirCumference) - (var(--CirCumference) * 70) / 100)' } : {}} stroke='chartreuse'></circle>
+                                </svg>
+                                <h6>NODE JS</h6>
+                            </div>
+                            <div className="Svg-Container">
+                                <svg width={100} height={100}>
+                                    <circle cx={50} cy={50} r={(ScreenWidth < 500) ? 35 : 45} strokeWidth={(ScreenWidth < 500) ? 6 : 8} style={(MenuClick) ? { strokeDashoffset: 'calc(var(--CirCumference) - (var(--CirCumference) * 70) / 100)' } : {}} stroke='yellow'></circle>
+                                </svg>
+                                <h6>EXPRESS JS</h6>
+                            </div>
+                            <div className="Svg-Container">
+                                <svg width={100} height={100}>
+                                    <circle cx={50} cy={50} r={(ScreenWidth < 500) ? 35 : 45} strokeWidth={(ScreenWidth < 500) ? 6 : 8} style={(MenuClick) ? { strokeDashoffset: 'calc(var(--CirCumference) - (var(--CirCumference) * 60) / 100)' } : {}} stroke='springgreen'></circle>
+                                </svg>
+                                <h6>MONGO DB</h6>
+                            </div>
+                            <div className="Svg-Container">
+                                <svg width={100} height={100}>
+                                    <circle cx={50} cy={50} r={(ScreenWidth < 500) ? 35 : 45} strokeWidth={(ScreenWidth < 500) ? 6 : 8} style={(MenuClick) ? { strokeDashoffset: 'calc(var(--CirCumference) - (var(--CirCumference) * 100) / 100)' } : {}} stroke='#0ef'></circle>
+                                </svg>
+                                <h6>#</h6>
+                            </div>
+                            <div className="Svg-Container">
+                                <svg width={100} height={100}>
+                                    <circle cx={50} cy={50} r={(ScreenWidth < 500) ? 35 : 45} strokeWidth={(ScreenWidth < 500) ? 6 : 8} style={(MenuClick) ? { strokeDashoffset: 'calc(var(--CirCumference) - (var(--CirCumference) * 100) / 100)' } : {}} stroke='hotpink'></circle>
+                                </svg>
+                                <h6>#</h6>
+                            </div>
+                            <div className="Svg-Container">
+                                <svg width={100} height={100}>
+                                    <circle cx={50} cy={50} r={(ScreenWidth < 500) ? 35 : 45} strokeWidth={(ScreenWidth < 500) ? 6 : 8} style={(MenuClick) ? { strokeDashoffset: 'calc(var(--CirCumference) - (var(--CirCumference) * 100) / 100)' } : {}} stroke='slateblue'></circle>
+                                </svg>
+                                <h6>#</h6>
+                            </div>
+                            <div className="Svg-Container">
+                                <svg width={100} height={100}>
+                                    <circle cx={50} cy={50} r={(ScreenWidth < 500) ? 35 : 45} strokeWidth={(ScreenWidth < 500) ? 6 : 8} style={(MenuClick) ? { strokeDashoffset: 'calc(var(--CirCumference) - (var(--CirCumference) * 100) / 100)' } : {}} stroke='salmon'></circle>
+                                </svg>
+                                <h6>#</h6>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </main>
         </div>
     )
