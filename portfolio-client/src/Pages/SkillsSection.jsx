@@ -5,15 +5,25 @@ import React, { useEffect, useState } from 'react';
 const SkillsSection = ({ ScrollValues }) => {
     const [MenuClick, setMenuClick] = useState(false);
     const [ScreenWidth, setScreenWidth] = useState(window.innerWidth);
+    const [ScreenHeight, setScreenHeight] = useState(window.innerHeight);
+    // 
     useEffect(() => {
         setScreenWidth(window.innerWidth);
+        setScreenHeight(window.innerHeight);
         window.addEventListener('resize', () => {
             setScreenWidth(window.innerWidth);
+            setScreenHeight(window.innerHeight);
         });
-    }, [ScreenWidth])
-    useEffect(()=>{
-        (ScrollValues >= (window.innerHeight * 2) - 170) ? setMenuClick(true) : null;
-    }, [ScrollValues])
+    }, [ScreenWidth, ScreenHeight]);
+    // 
+    useEffect(() => {
+        (ScrollValues >= (window.innerHeight * 2) - 170) ?
+            setMenuClick(true) :
+            (ScreenHeight >= 1000 && ScrollValues >= (window.innerHeight - 170)) ?
+                setMenuClick(true) :
+                setMenuClick(false);
+    }, [ScrollValues]);
+    // 
     return (
         <div className='Skills-Page' id='Skills-Page'>
             <h1 className='fw-bold'>SKILLS</h1>

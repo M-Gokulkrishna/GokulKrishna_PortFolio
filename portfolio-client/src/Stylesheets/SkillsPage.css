@@ -1,10 +1,6 @@
 :root {
-    --Bg-Color: #232323;
-    --BarScale: 50px;
-    --Color1: #0ef;
-    --Color2: #ff3366;
-    --Color3: #2B124C;
     --BarRadius: 50;
+    --BarScale: 50px;
     --MenuBarSize: 450px;
     --CirCumference: 282.75;
     --Offset1: calc(var(--MenuBarSize) / 2 - var(--BarScale));
@@ -86,20 +82,14 @@
     background-color: aliceblue;
 }
 
-.Skills-Page>main>section {
-    position: relative;
-    display: flex;
-    width: 450px;
-    height: 450px;
-    align-items: center;
-    justify-content: center;
-}
 
+.Skills-Page>main>section,
 .Outer-Menu-Container {
     position: relative;
     display: flex;
     width: 450px;
     height: 450px;
+    overflow: hidden;
     align-items: center;
     justify-content: center;
 }
@@ -107,8 +97,6 @@
 .Inner-Menu-Container {
     display: flex;
     z-index: 1;
-    top: 50%;
-    left: 50%;
     width: 100%;
     height: 100%;
     border-radius: 50%;
@@ -138,7 +126,7 @@
     transition: transform 1s;
 }
 
-.Svg-Container>h6{
+.Svg-Container>h6 {
     position: absolute;
     margin: auto;
     font-weight: bold;
@@ -244,13 +232,7 @@
         font-size: 60px;
     }
 
-    /* .Svg-Container {
-        padding: 0;
-        border-radius: 50%;
-        background-color: transparent;
-    } */
-
-    .Svg-Container>h6{
+    .Svg-Container>h6 {
         transform: rotate(90deg) scaleX(0.6) scaleY(1.2);
     }
 }
