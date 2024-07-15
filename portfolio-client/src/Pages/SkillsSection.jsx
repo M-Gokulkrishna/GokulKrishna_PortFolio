@@ -1,3 +1,4 @@
+import AOS from 'aos';
 import '../Stylesheets/SkillsPage.css';
 import { FaTimes } from 'react-icons/fa';
 import React, { useEffect, useState } from 'react';
@@ -6,6 +7,13 @@ const SkillsSection = ({ ScrollValues }) => {
     const [MenuClick, setMenuClick] = useState(false);
     const [ScreenWidth, setScreenWidth] = useState(window.innerWidth);
     const [ScreenHeight, setScreenHeight] = useState(window.innerHeight);
+    // 
+    useEffect(() => {
+        AOS.init({
+            duration: 900
+        });
+
+    }, [])
     // 
     useEffect(() => {
         setScreenWidth(window.innerWidth);
@@ -26,7 +34,7 @@ const SkillsSection = ({ ScrollValues }) => {
     // 
     return (
         <div className='Skills-Page' id='Skills-Page'>
-            <h1 className='fw-bold'>SKILLS</h1>
+            <h2 className='fw-bold' data-aos="zoom-in">SKILLS</h2>
             <main>
                 <section>
                     <div className="Outer-Menu-Container">

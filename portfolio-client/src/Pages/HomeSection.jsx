@@ -1,7 +1,7 @@
 import AOS from 'aos';
 import '../Stylesheets/HomePage.css';
 import React, { useEffect } from 'react';
-import Header from '../Components/Header.jsx';
+import NavBar from '../Components/NavBar';
 import ProfilePic from '../assets/Profile_pic.png';
 import ResumePdf from '../assets/files/GokulKrishna_Resume.pdf';
 import { FaLinkedin, FaGithub, FaEnvelope } from 'react-icons/fa';
@@ -14,7 +14,7 @@ const HomeSection = () => {
   }, [])
   return (
     <div id='Home-Page'>
-      <Header />
+      <NavBar />
       <main>
         <section className='fw-bolder mx-2 p-2' data-aos="fade-right">
           <h2>Hi, There !</h2>

@@ -10,18 +10,19 @@
 
 .About-Header {
     position: relative;
-    display: grid;
-    width: 50vw;
+    display: flex;
+    width: 35vw;
     height: 60px;
     margin: 20px;
-    place-items: center;
+    align-items: center;
     border-radius: 12px;
     color: var(--Color3);
+    justify-content: center;
     background-color: var(--Color1);
     box-shadow: 0 0 20px var(--Color1);
 }
 
-.About-Header::after{
+.About-Header::after {
     position: absolute;
     content: "";
     left: 0;
@@ -122,6 +123,12 @@
     #About-Page {
         min-width: 100vw;
         min-height: 200vh;
+    }
+}
+
+@media (width<=500px) {
+    .About-Header{
+        width: 50vw;
     }
 }
 

@@ -10,13 +10,14 @@
 }
 
 #Projects-Page>header {
-    display: grid;
+    display: flex;
     width: 35vw;
     height: 60px;
     margin: 20px;
-    place-items: center;
+    align-items: center;
     border-radius: 12px;
     color: var(--Color3);
+    justify-content: center;
     background-color: var(--Color1);
     box-shadow: 0 0 20px var(--Color1);
 }

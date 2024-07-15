@@ -75,7 +75,7 @@ const ContactSection = () => {
         <ToastContainer />
       </div>
       <header data-aos="fade-down">
-        <h1 className='fw-bold m-auto'>Contact Me</h1>
+        <h2 className='fw-bold my-auto'>Contact Me</h2>
       </header>
       <div className="Form-Container">
         <div className="Contact-Section1">

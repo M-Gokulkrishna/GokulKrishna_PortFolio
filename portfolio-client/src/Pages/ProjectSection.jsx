@@ -97,7 +97,7 @@ const ProjectSection = () => {
   return (
     <div id='Projects-Page'>
       <header data-aos="fade-down">
-        <h1 className='fw-bold my-auto'>My Projects</h1>
+        <h2 className='fw-bold my-auto'>My Projects</h2>
       </header>
       <div className='Carousel-Card' data-aos="zoom-in">
         {

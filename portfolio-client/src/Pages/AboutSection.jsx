@@ -27,7 +27,7 @@ const AboutSection = () => {
     return (
         <div id='About-Page'>
             <header className='About-Header' data-aos="fade-down">
-                <h1 className='fw-bold'>About Me</h1>
+                <h2 className='fw-bold my-auto'>About Me</h2>
             </header>
             <main className='About-Main m-auto' data-aos="fade-up">
                 <div className='About-Headings'>
