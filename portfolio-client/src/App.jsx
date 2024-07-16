@@ -19,11 +19,11 @@ function App() {
       setScrollValues(ScrollValueRef.current.getBoundingClientRect().top * (-1));
     });
   }, []);
-  // useEffect(()=>{
-  //   window.addEventListener('contextmenu', (event)=>{
-  //     event.preventDefault();
-  //   })
-  // }, [])
+  useEffect(()=>{
+    window.addEventListener('contextmenu', (event)=>{
+      event.preventDefault();
+    })
+  }, [])
   return (
     <div className='App-Layout-Page' ref={ScrollValueRef}>
       <div
