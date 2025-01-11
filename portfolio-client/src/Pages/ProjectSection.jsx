@@ -5,8 +5,9 @@ import React, { useEffect, useRef, useState } from 'react';
 import CarouselPic1 from '../assets/College_Project_Pic1.png';
 import CarouselPic2 from '../assets/Skillye_Project_Pic4.png';
 import CarouselPic3 from '../assets/Ludo_Game_Pic2.png';
+import CarouselPic4 from '../assets/Portfolio_project_Pic5.png';
 
-let ImageArray = [CarouselPic1, CarouselPic2, CarouselPic3];
+let ImageArray = [CarouselPic1, CarouselPic2, CarouselPic3, CarouselPic4];
 const ProjectSection = () => {
   const CarouselRef = useRef(null);
   const [CarouselCount, setCarouselCount] = useState(0);
@@ -18,6 +19,7 @@ const ProjectSection = () => {
       { id: 0, Heading: 'Attendance WebApp', anchorLink: '/', Description: 'A MERN stack web app, a sleek design to replace the traditional paper - based student attendance system with a modern digital solution for students who use the college Bus service.' },
       { id: 1, Heading: 'Skillye WebApp', anchorLink: 'https://github.com/M-Gokulkrishna/Skillye-webapp', Description: 'Developed an Exquisite Web Application using a stream such as MERN stack, It allows user can create their own profile card to showcase their skills & Competencies to get a job opportunities.' },
       { id: 2, Heading: 'Ludo Game', anchorLink: 'https://github.com/M-Gokulkrishna/Ludo-Game-JS', Description: 'Developed a Visually Appealing Ludo Game Using HTML, CSS, JavaScript. Interactive Elements, Logics & Animations Provides a wonderful Gaming Experience.' },
+      { id: 3, Heading: 'Portfolio Website', anchorLink: 'https://github.com/M-Gokulkrishna/Ludo-Game-JS', Description: 'An Animated and visually Appealing portfolio website using MERN Stack and through that I can showcase my works related to my skills.' },
     ];
 
   useEffect(() => {

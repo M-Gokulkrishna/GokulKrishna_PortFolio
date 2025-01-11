@@ -17,7 +17,7 @@ const HomeSection = () => {
       <NavBar />
       <main>
         <section className='fw-bolder mx-2 p-2' data-aos="fade-right">
-          <h2>Hi, There !</h2>
+          <h2>Hello, EveryOne!</h2>
           <div>
             <h1 className='Name-Tag'>I'm <span style={{color: 'var(--Color1)'}}>Gokul Krishna M</span>&ensp;</h1>
           </div>
