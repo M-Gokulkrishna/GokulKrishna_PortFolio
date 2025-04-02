@@ -127,25 +127,25 @@ const SkillsSection = ({ ScrollValues }) => {
                                 <svg width={100} height={100}>
                                     <circle cx={50} cy={50} r={(ScreenWidth < 500) ? 35 : 45} strokeWidth={(ScreenWidth < 500) ? 6 : 8} style={(MenuClick) ? { strokeDashoffset: 'calc(var(--CirCumference) - (var(--CirCumference) * 100) / 100)' } : {}} stroke='#0ef'></circle>
                                 </svg>
-                                <h6>#</h6>
+                                <h6>SOCKET.IO</h6>
                             </div>
                             <div className="Svg-Container">
                                 <svg width={100} height={100}>
                                     <circle cx={50} cy={50} r={(ScreenWidth < 500) ? 35 : 45} strokeWidth={(ScreenWidth < 500) ? 6 : 8} style={(MenuClick) ? { strokeDashoffset: 'calc(var(--CirCumference) - (var(--CirCumference) * 100) / 100)' } : {}} stroke='hotpink'></circle>
                                 </svg>
-                                <h6>#</h6>
+                                <h6>REACT QUERY</h6>
                             </div>
                             <div className="Svg-Container">
                                 <svg width={100} height={100}>
                                     <circle cx={50} cy={50} r={(ScreenWidth < 500) ? 35 : 45} strokeWidth={(ScreenWidth < 500) ? 6 : 8} style={(MenuClick) ? { strokeDashoffset: 'calc(var(--CirCumference) - (var(--CirCumference) * 100) / 100)' } : {}} stroke='slateblue'></circle>
                                 </svg>
-                                <h6>#</h6>
+                                <h6>AOS</h6>
                             </div>
                             <div className="Svg-Container">
                                 <svg width={100} height={100}>
                                     <circle cx={50} cy={50} r={(ScreenWidth < 500) ? 35 : 45} strokeWidth={(ScreenWidth < 500) ? 6 : 8} style={(MenuClick) ? { strokeDashoffset: 'calc(var(--CirCumference) - (var(--CirCumference) * 100) / 100)' } : {}} stroke='salmon'></circle>
                                 </svg>
-                                <h6>#</h6>
+                                <h6>JWT</h6>
                             </div>
                         </div>
                     </div>
