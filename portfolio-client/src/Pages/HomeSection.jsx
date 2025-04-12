@@ -2,7 +2,7 @@ import AOS from 'aos';
 import '../Stylesheets/HomePage.css';
 import React, { useEffect } from 'react';
 import NavBar from '../Components/NavBar';
-import ProfilePic from '../assets/Profile_pic.png';
+import ProfilePic from '../assets/Profile_Pic.jpg';
 import ResumePdf from '../assets/files/GokulKrishna_Resume.pdf';
 import { FaLinkedin, FaGithub, FaEnvelope } from 'react-icons/fa';
 
